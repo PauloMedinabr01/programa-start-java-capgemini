@@ -4,11 +4,20 @@
 package programa.start.java.capgemini;
 
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        System.out.println("Hello World!");
+
+        // Comentários em linha: comenta somente a linha
+
+        /*
+         * Comentários em bloco: comenta varias linhas em bloco
+         */
+
+        /**
+         * Comentários de documentação: gera comentario que fará parte da documentação
+         * sobre o programa
+         */
+
     }
 }
