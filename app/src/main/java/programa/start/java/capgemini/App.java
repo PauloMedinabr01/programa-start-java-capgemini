@@ -1,23 +1,32 @@
 /*
- * 7. Leia uma temperatura em graus Celsius e apresentá-la convertida em graus Fahrenheit. A fórmula de 
- * conversão é: F= (9*C+160) / 5, sendo F a temperatura em Fahrenheit e C a temperatura em Celsius; 
+ * 8. Elabore um algoritmo que efetue a apresentação do valor da conversão em real (R$) de um valor lido em 
+ * dólar (US$). O algoritmo deverá solicitar o valor da cotação do dólar e também a quantidade de dólares 
+ * disponíveis com o usuário;
  */
 package programa.start.java.capgemini;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 public class App {
 
     public static void main(String[] args) {
 
+        Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Informe a temperatura em Celsius: ");
+        System.out.print("Informe a cotação do dolar: ");
+        double cotacaoDolar = sc.nextDouble();
 
-        double celsius = sc.nextDouble();
-        double fahrenheit = (9 * celsius + 160) / 5;
+        System.out.print("Informe a quantidades de dolares a serem convertidos para real: ");
+        double quantidade = sc.nextDouble();
 
-        System.out.println("A temperatura em Fahrenheit é: " + fahrenheit);
+        double conversorDeMoeda = cotacaoDolar * quantidade;
+
+        System.out.println("Cotação do dolar: $" + cotacaoDolar);
+        System.out.println("Quantidade total em dolares com o usuário: $" + String.format("%.2f", quantidade));
+        System.out
+                .println("Quantidade em dolares convertidos para reais: R$" + String.format("%.2f", conversorDeMoeda));
 
         sc.close();
     }
