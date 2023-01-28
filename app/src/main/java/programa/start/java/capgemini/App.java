@@ -11,16 +11,22 @@ public class App {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Digite a média: ");
-        int media = sc.nextInt();
+        System.out.print("Digite o código do produto: ");
+        int codigoProduto = sc.nextInt();
 
-        if (media <= 5) {
-            System.out.println("Aluno Reprovado. ");
-        } else if (media == 6) {
-            System.out.println("Aluno em Recuperação. ");
-        } else {
-            System.out.println("Aluno Aprovado. ");
-
+        while (codigoProduto != 1 || codigoProduto != 2) {
+            switch (codigoProduto) {
+                case 1:
+                    System.out.println("Tv LG 55 polegadas. ");
+                    break;
+                case 2:
+                    System.out.println("Tv LG 65 polegadas. ");
+                    break;
+                default:
+                    System.out.println("Digite um número entre 1 e 2. ");
+                    break;
+            }
+            codigoProduto = sc.nextInt();
         }
     }
 }
