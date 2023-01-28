@@ -1,7 +1,6 @@
 /*
- * 4. Escreva um algoritmo que leia o nome de um vendedor, o seu salário fixo e o total de vendas efetuadas 
- * por ele no mês (em dinheiro). Sabendo que este vendedor ganha 15% de comissão sobre suas vendas 
- * efetuadas, informar o seu nome, o salário fixo e salário no final do mês;
+ * 5. Escreva um algoritmo que leia o nome de um aluno e as notas das três provas que ele obteve no semestre.
+ * No final informar o nome do aluno e a sua média (aritmética);
  */
 package programa.start.java.capgemini;
 
@@ -13,24 +12,37 @@ public class App {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Informe o nome do vendedor: ");
-        String nomeDoVendedor = sc.nextLine();
+        double[] notas = new double[3];
+        double soma = 0;
+        double media;
 
-        System.out.print("Informe o salário fixo do vendedor: ");
-        double salarioFixo = sc.nextDouble();
+        System.out.println("Informe o nome do aluno: ");
+        String nome = sc.nextLine();
 
-        System.out.print("Informe o total de vendas no mês (em dinheiro): ");
-        double totalDeVendas = sc.nextDouble();
+        for (int i = 0; i < 3; i++) {
+            System.out.println("Informe a " + (i + 1) + "ª nota: ");
+            notas[i] = sc.nextDouble();
+            sc.nextLine();
+            soma += notas[i];
+        }
 
-        double comissao = totalDeVendas * 0.15;
-        double salarioTotal = comissao + salarioFixo;
+        media = soma / 3;
 
-        System.out.println("vendedor: " + nomeDoVendedor);
-        System.out.println("Salário fixo: R$ " + String.format("%.2f", salarioFixo));
-        System.out.println("Valor da comissão: R$ " + String.format("%.2f", comissao));
-        System.out.println("Salário no final do mês: R$ " + String.format("%.2f", salarioTotal));
+        System.out.println("Notas: ");
+        for (int i = 0; i < 3; i++) {
+            System.out.println("Nota " + (i + 1) + ": " + notas[i]);
+        }
 
+        System.out.println("Soma das notas no semestre: " + soma);
+        System.out.println("Média das notas no semestre: " + String.format("%.2f", media));
+
+        if (media < 5) {
+            System.out.println("Aluno " + nome + " Reprovado. ");
+        } else if (media >= 5 && media < 6) {
+            System.out.println("Aluno " + nome + " em Recuperação. ");
+        } else {
+            System.out.println("Aluno " + nome + " Aprovado. ");
+        }
         sc.close();
-
     }
 }
