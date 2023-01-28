@@ -1,6 +1,6 @@
 /*
- * 2. Faça um algoritmo que receba dois números e ao final mostre a soma, subtração, multiplicação e a 
- * divisão dos dois números lidos;
+ * 3. Escreva um algoritmo para determinar o consumo médio de um automóvel sendo fornecida a distância
+ * total percorrida pelo automóvel e o total de combustível gasto;
  */
 package programa.start.java.capgemini;
 
@@ -12,22 +12,20 @@ public class App {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println(
-                "Digite os valores de X e Y para efeutuar os calculos (soma, subtração, multiplicação e divisão.). ");
-        System.out.print("Digite X: ");
-        int x = sc.nextInt();
-        System.out.print("Digite Y: ");
-        int y = sc.nextInt();
+        System.out.println("Informe a distância percorrida em km: ");
+        double distanciaPercorrida = sc.nextDouble();
 
-        int soma = x + y;
-        int subtracao = x - y;
-        int multiplicacao = x * y;
-        int divisao = x / y;
+        System.out.println("Informe a quantidade de combustível usado em litros: ");
+        double quantidadeCombustivelUsado = sc.nextDouble();
 
-        System.out.println("A soma de X e Y é: " + soma);
-        System.out.println("A subtração de X e Y é: " + subtracao);
-        System.out.println("A multiplicação de X e Y é: " + multiplicacao);
-        System.out.println("A divisão de X e Y é: " + divisao);
+        System.out.println("Informe o preço do combustível por litro: ");
+        double precoCombustivel = sc.nextDouble();
+
+        double mediaConsumo = distanciaPercorrida / quantidadeCombustivelUsado;
+        double totalGasto = precoCombustivel * quantidadeCombustivelUsado;
+
+        System.out.println("Média de consumo: " + mediaConsumo + " km/l");
+        System.out.println("Total gasto: R$ " + totalGasto);
 
         sc.close();
 
