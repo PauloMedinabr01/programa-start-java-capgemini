@@ -1,6 +1,6 @@
 /*
- * 7. Leia uma temperatura em graus Celsius e apresentá-la convertida em graus Fahrenheit. Afórmula de 
- * conversão é: F=(9*C+160) / 5, sendo F a temperatura em Fahrenheit e C a temperatura em Celsius; 
+ * 7. Leia uma temperatura em graus Celsius e apresentá-la convertida em graus Fahrenheit. A fórmula de 
+ * conversão é: F= (9*C+160) / 5, sendo F a temperatura em Fahrenheit e C a temperatura em Celsius; 
  */
 package programa.start.java.capgemini;
 
@@ -16,7 +16,7 @@ public class App {
 
         double celsius = sc.nextDouble();
         double fahrenheit = (9 * celsius + 160) / 5;
-        
+
         System.out.println("A temperatura em Fahrenheit é: " + fahrenheit);
 
         sc.close();
