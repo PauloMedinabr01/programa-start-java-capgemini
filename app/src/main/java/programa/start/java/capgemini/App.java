@@ -3,75 +3,24 @@
  */
 package programa.start.java.capgemini;
 
+import java.util.Scanner;
+
 public class App {
 
     public static void main(String[] args) {
 
-        int x = 5; // int: é usado para armazenar números inteiros. Exemplo: int x = 5;
-        double z = 2.71828d; // double: é usado para armazenar números de ponto flutuante com precisão dupla.
-                             // Exemplo: double z = 2.71828;
-        float y = 3.14f; // float: é usado para armazenar números de ponto flutuante com precisão
-                         // simples. Exemplo: float y = 3.14f;
-        long l; // long: é usado para armazenar números inteiros com um tamanho de 64 bits.
-                // Exemplo: long l = 9223372036854775807L;
-        char c = 'A'; // char: é usado para armazenar caracteres únicos. Exemplo: char c = 'A';
-        byte b = 100; // byte: é usado para armazenar números inteiros com um tamanho de 8 bits.
-                      // Exemplo: byte b = 100;
-        short s = 32767; // short: é usado para armazenar números inteiros com um tamanho de 16 bits.
-                         // Exemplo: short s = 32767;
-        boolean h = true; // boolean: é usado para armazenar valores lógicos (verdadeiro ou falso).
-                          // Exemplo: boolean h = true;
-        String nome; // A variável do tipo String é usada para armazenar cadeias de caracteres.
-                     // Exemplo: String nome = "João Silva";
+        Scanner sc = new Scanner(System.in);
 
-        /*
-         * O operador && (E lógico) retorna verdadeiro se ambas as expressões forem
-         * verdadeiras. Exemplo: (x < 10 && y > 5) retornaria verdadeiro se x for menor
-         * que 10 e y for maior que 5.
-         * 
-         * O operador || (OU lógico) retorna verdadeiro se pelo menos uma das expressões
-         * for verdadeira. Exemplo: (x < 10 || y > 5) retornaria verdadeiro se x for
-         * menor que 10 ou y for maior que 5.
-         * 
-         * O operador ! (Não lógico) inverte o valor booleano de uma expressão. Exemplo:
-         * !(x < 10) retornaria verdadeiro se x não for menor que 10.
-         * 
-         * Além destes, existe o operador ternário ? : que é uma forma condicional de
-         * atribuição de valor a uma variavel, sendo ? a condição e : os valores de
-         * retorno caso a condição seja verdadeira ou falsa.
-         * Exemplo : int maior = (x > y) ? x : y;
-         * 
-         * Esses operadores são usados ​​para criar expressões lógicas em estruturas de
-         * controle de fluxo, como if-else e while-loops, para tomar decisões no seu
-         * código.
-         */
+        System.out.print("Digite a média: ");
+        int media = sc.nextInt();
 
-        /*
-         * Em Java, existem vários operadores de atribuição que são usados ​​para
-         * atribuir valores a variáveis. Os operadores mais comuns são:
-         * 
-         * O operador = é usado para atribuir um valor a uma variável. Exemplo: x = 5;
-         * 
-         * O operador += adiciona o valor à direita da variável à esquerda e o atribui à
-         * variável à esquerda. Exemplo: x += 3; (é equivalente a x = x + 3;)
-         * 
-         * O operador -= subtrai o valor à direita da variável à esquerda e o atribui à
-         * variável à esquerda. Exemplo: x -= 3; (é equivalente a x = x - 3;)
-         * 
-         * O operador *= multiplica o valor à direita da variável à esquerda e o atribui
-         * à variável à esquerda. Exemplo: x *= 3; (é equivalente a x = x * 3;)
-         * 
-         * O operador /= divide o valor à esquerda da variável pela variável à direita e
-         * o atribui à variável à esquerda. Exemplo: x /= 3; (é equivalente a x = x /
-         * 3;)
-         * 
-         * O operador %= calcula o resto da divisão do valor à esquerda da variável pela
-         * variável à direita e o atribui à variável à esquerda. Exemplo: x %= 3; (é
-         * equivalente a x = x % 3;)
-         * 
-         * Esses operadores de atribuição são muito úteis para simplificar o código e
-         * evitar a escrita de expressões longas e redundantes.
-         */
+        if (media <= 5) {
+            System.out.println("Aluno Reprovado. ");
+        } else if (media == 6) {
+            System.out.println("Aluno em Recuperação. ");
+        } else {
+            System.out.println("Aluno Aprovado. ");
 
+        }
     }
 }
