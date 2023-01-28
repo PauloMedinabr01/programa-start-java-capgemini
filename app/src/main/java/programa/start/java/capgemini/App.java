@@ -3,21 +3,35 @@
  */
 package programa.start.java.capgemini;
 
+import java.util.Scanner;
+
 public class App {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
 
-        // Comentários em linha: comenta somente a linha
+        Scanner sc = new Scanner(System.in);
 
-        /*
-         * Comentários em bloco: comenta varias linhas em bloco
-         */
+        System.out.print("Digite um numero inteiro: ");
+        int idade = sc.nextInt(); // lê um numero inteiro
 
-        /**
-         * Comentários de documentação: gera comentario que fará parte da documentação
-         * sobre o programa
-         */
+        System.out.print("Digite um numero double: ");
+        double numero = sc.nextDouble();// lê um numero
+
+        System.out.print("Digite um numero float: ");
+        float cotacaoDolar = sc.nextFloat();
+
+        System.out.print("Digite um nome: ");
+        String nome = sc.next();
+        sc.nextLine();
+
+        System.out.print("Digite um nome e sobrenome: ");
+        String nomeESobrenome = sc.nextLine();
+
+        System.out.println(idade);
+        System.out.println(numero);
+        System.out.println(cotacaoDolar);
+        System.out.println(nome);
+        System.out.println(nomeESobrenome);
 
     }
 }
