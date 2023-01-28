@@ -1,6 +1,7 @@
 /*
- * 3. Escreva um algoritmo para determinar o consumo médio de um automóvel sendo fornecida a distância
- * total percorrida pelo automóvel e o total de combustível gasto;
+ * 4. Escreva um algoritmo que leia o nome de um vendedor, o seu salário fixo e o total de vendas efetuadas 
+ * por ele no mês (em dinheiro). Sabendo que este vendedor ganha 15% de comissão sobre suas vendas 
+ * efetuadas, informar o seu nome, o salário fixo e salário no final do mês;
  */
 package programa.start.java.capgemini;
 
@@ -12,20 +13,22 @@ public class App {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Informe a distância percorrida em km: ");
-        double distanciaPercorrida = sc.nextDouble();
+        System.out.print("Informe o nome do vendedor: ");
+        String nomeDoVendedor = sc.nextLine();
 
-        System.out.println("Informe a quantidade de combustível usado em litros: ");
-        double quantidadeCombustivelUsado = sc.nextDouble();
+        System.out.print("Informe o salário fixo do vendedor: ");
+        double salarioFixo = sc.nextDouble();
 
-        System.out.println("Informe o preço do combustível por litro: ");
-        double precoCombustivel = sc.nextDouble();
+        System.out.print("Informe o total de vendas no mês (em dinheiro): ");
+        double totalDeVendas = sc.nextDouble();
 
-        double mediaConsumo = distanciaPercorrida / quantidadeCombustivelUsado;
-        double totalGasto = precoCombustivel * quantidadeCombustivelUsado;
+        double comissao = totalDeVendas * 0.15;
+        double salarioTotal = comissao + salarioFixo;
 
-        System.out.println("Média de consumo: " + mediaConsumo + " km/l");
-        System.out.println("Total gasto: R$ " + totalGasto);
+        System.out.println("vendedor: " + nomeDoVendedor);
+        System.out.println("Salário fixo: R$ " + String.format("%.2f", salarioFixo));
+        System.out.println("Valor da comissão: R$ " + String.format("%.2f", comissao));
+        System.out.println("Salário no final do mês: R$ " + String.format("%.2f", salarioTotal));
 
         sc.close();
 
