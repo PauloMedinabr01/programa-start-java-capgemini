@@ -1,7 +1,6 @@
 /*
- * 6. Leia dois valores para as variáveis A e B, e efetuar as trocas dos valores de forma que a variável A 
- * passe a possuir o valor da variável B e a variável B passe a possuir o valor da variável A. Apresentar os
- * valores trocados; 
+ * 7. Leia uma temperatura em graus Celsius e apresentá-la convertida em graus Fahrenheit. Afórmula de 
+ * conversão é: F=(9*C+160) / 5, sendo F a temperatura em Fahrenheit e C a temperatura em Celsius; 
  */
 package programa.start.java.capgemini;
 
@@ -13,18 +12,12 @@ public class App {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Informe o valor de A: ");
-        int A = sc.nextInt();
+        System.out.println("Informe a temperatura em Celsius: ");
 
-        System.out.println("Informe o valor de B: ");
-        int B = sc.nextInt();
-
-        int temp = A;
-        A = B;
-        B = temp;
-
-        System.out.println("Valor de A trocado: " + A);
-        System.out.println("Valor de B trocado: " + B);
+        double celsius = sc.nextDouble();
+        double fahrenheit = (9 * celsius + 160) / 5;
+        
+        System.out.println("A temperatura em Fahrenheit é: " + fahrenheit);
 
         sc.close();
     }
