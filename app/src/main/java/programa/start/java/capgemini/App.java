@@ -1,7 +1,6 @@
 /*
- * 8. Elabore um algoritmo que efetue a apresentação do valor da conversão em real (R$) de um valor lido em 
- * dólar (US$). O algoritmo deverá solicitar o valor da cotação do dólar e também a quantidade de dólares 
- * disponíveis com o usuário;
+ * 9. Faça um algoritmo que receba um valor que foi depositado e exiba o valor com rendimento após um mês. Considere fixo o juro da poupança em 
+ * 0,07% a. m;
  */
 package programa.start.java.capgemini;
 
@@ -15,19 +14,14 @@ public class App {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Informe a cotação do dolar: ");
-        double cotacaoDolar = sc.nextDouble();
+        System.out.println("Informe o valor depositado: ");
+        double valorDepositado = sc.nextDouble();
 
-        System.out.print("Informe a quantidades de dolares a serem convertidos para real: ");
-        double quantidade = sc.nextDouble();
+        double juros = valorDepositado * 0.0007;
+        double valorFinal = valorDepositado + juros;
 
-        double conversorDeMoeda = cotacaoDolar * quantidade;
-
-        System.out.println("Cotação do dolar: $" + cotacaoDolar);
-        System.out.println("Quantidade total em dolares com o usuário: $" + String.format("%.2f", quantidade));
-        System.out
-                .println("Quantidade em dolares convertidos para reais: R$" + String.format("%.2f", conversorDeMoeda));
-
+        System.out.println("Valor final com rendimento após um mês: " + String.format("%.2f", valorFinal));
+       
         sc.close();
     }
 }
