@@ -1,5 +1,7 @@
 /*
- * 24. Faça um algoritmo que receba “N” números e mostre positivo, negativo ou zero para cada número;
+ * 25. Faça um algoritmo que leia dois números e identifique se são iguais ou diferentes. Caso eles sejam 
+ * iguais imprima uma mensagem dizendo que eles são iguais. Caso sejam diferentes, informe qual número é o
+ * maior;
  */
 package programa.start.java.capgemini;
 
@@ -10,16 +12,27 @@ public class App {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Digite um número: ");
+        System.out.print("Digite o primeiro número: ");
+        int m = sc.nextInt();
+        System.out.print("Digite o segundo número: ");
         int n = sc.nextInt();
 
-        if (n > 0) {
-            System.out.println("Número " + n + " é positivo.");
-        } else if (n < 0) {
-            System.out.println("Número " + n + " é negativo.");
+        System.out.println("Numeros digitados: " + m + ", " + n);
+
+        if (m == n) {
+            System.out.println("Números iguais.");
         } else {
-            System.out.println("Número é igual a 0.");
+            System.out.println("Números diferentes.");
         }
+
+        if (m > n) {
+            System.out.println(m + " é o maior.");
+        } else if (n > m) {
+            System.out.println(n + " é o maior.");
+        } else {
+
+        }
+
         sc.close();
     }
 }
