@@ -1,7 +1,6 @@
 /*
- * 22. Faça um algoritmo que receba o preço de custo e o preço de venda de 40 produtos. Mostre como resultado
- * se houve lucro, prejuízo ou empate para cada produto. Informe o valor de custo de cada produto, o valor
- * de venda de cada produto, a média de preço de custo e do preço de venda;
+ * 23. Faça um algoritmo que receba um número e mostre uma mensagem caso este número seja maior que 80, 
+ * menor que 25 ou igual a 40;
  */
 package programa.start.java.capgemini;
 
@@ -12,35 +11,18 @@ public class App {
 
         Scanner sc = new Scanner(System.in);
 
-        int qtdProdutos = 40;
-        double[] precosCusto = new double[qtdProdutos];
-        double[] precosVenda = new double[qtdProdutos];
-        double somaPrecoCusto = 0;
-        double somaPrecoVenda = 0;
+        System.out.print("Digite um número: ");
+        int n = sc.nextInt();
 
-        for (int i = 0; i < qtdProdutos; i++) {
-            System.out.print("Informe o preço de custo do produto " + (i + 1) + ": ");
-            precosCusto[i] = sc.nextDouble();
-            System.out.print("Informe o preço de venda do produto " + (i + 1) + ": ");
-            precosVenda[i] = sc.nextDouble();
-            somaPrecoCusto += precosCusto[i];
-            somaPrecoVenda += precosVenda[i];
-
-            if (precosVenda[i] > precosCusto[i]) {
-                System.out.println("Produto " + (i + 1) + " teve lucro.");
-            } else if (precosVenda[i] < precosCusto[i]) {
-                System.out.println("Produto " + (i + 1) + " teve prejuízo.");
-            } else {
-                System.out.println("Produto " + (i + 1) + " teve empate.");
-            }
+        if (n > 80) {
+            System.out.println("Número " + n + " é maior que 80.");
+        } else if (n == 40) {
+            System.out.println("Número " + n + " é igual a 40.");
+        } else if (n < 25) {
+            System.out.println("Número " + n + " é menor que 25.");
+        } else {
+            System.out.println("Número " + n + " não está nas condições.");
         }
-
-        double mediaPrecoCusto = somaPrecoCusto / qtdProdutos;
-        double mediaPrecoVenda = somaPrecoVenda / qtdProdutos;
-
-        System.out.println("Média de preço de custo: " + mediaPrecoCusto);
-        System.out.println("Média de preço de venda: " + mediaPrecoVenda);
-
         sc.close();
     }
 }
