@@ -1,6 +1,7 @@
 /*
- * 21. Escreva um algoritmo que leia os dados de “N” pessoas (nome, sexo, idade e saúde) e informe se está apta
- * ou não para cumprir o serviço militar obrigatório. Informe os totais;
+ * 22. Faça um algoritmo que receba o preço de custo e o preço de venda de 40 produtos. Mostre como resultado
+ * se houve lucro, prejuízo ou empate para cada produto. Informe o valor de custo de cada produto, o valor
+ * de venda de cada produto, a média de preço de custo e do preço de venda;
  */
 package programa.start.java.capgemini;
 
@@ -11,38 +12,35 @@ public class App {
 
         Scanner sc = new Scanner(System.in);
 
-        int n, idade;
-        int contadorApto = 0;
-        int contadorInapto = 0;
-        String nome, sexo, saude;
+        int qtdProdutos = 40;
+        double[] precosCusto = new double[qtdProdutos];
+        double[] precosVenda = new double[qtdProdutos];
+        double somaPrecoCusto = 0;
+        double somaPrecoVenda = 0;
 
-        System.out.print("Quantas pessoas serão informadas: ");
-        n = sc.nextInt();
+        for (int i = 0; i < qtdProdutos; i++) {
+            System.out.print("Informe o preço de custo do produto " + (i + 1) + ": ");
+            precosCusto[i] = sc.nextDouble();
+            System.out.print("Informe o preço de venda do produto " + (i + 1) + ": ");
+            precosVenda[i] = sc.nextDouble();
+            somaPrecoCusto += precosCusto[i];
+            somaPrecoVenda += precosVenda[i];
 
-        for (int i = 0; i < n; i++) {
-            System.out.println("Pessoa " + (i + 1));
-            System.out.print("Nome: ");
-            nome = sc.next();
-            System.out.print("Sexo (M/F): ");
-            sexo = sc.next();
-            System.out.print("Idade: ");
-            idade = sc.nextInt();
-            System.out.print("Condição de saúde (apto/inapto): ");
-            saude = sc.next();
-
-            if (sexo.equalsIgnoreCase("M") && idade >= 18 && idade <= 45 && saude.equalsIgnoreCase("apto")) {
-                System.out.println(nome + " é apto para o serviço militar");
-                contadorApto++;
+            if (precosVenda[i] > precosCusto[i]) {
+                System.out.println("Produto " + (i + 1) + " teve lucro.");
+            } else if (precosVenda[i] < precosCusto[i]) {
+                System.out.println("Produto " + (i + 1) + " teve prejuízo.");
             } else {
-                System.out.println(nome + " não é apto para o serviço militar");
-                contadorInapto++;
+                System.out.println("Produto " + (i + 1) + " teve empate.");
             }
         }
 
-        System.out.println("Total de pessoas aptas: " + contadorApto);
-        System.out.println("Total de pessoas inaptas: " + contadorInapto);
+        double mediaPrecoCusto = somaPrecoCusto / qtdProdutos;
+        double mediaPrecoVenda = somaPrecoVenda / qtdProdutos;
+
+        System.out.println("Média de preço de custo: " + mediaPrecoCusto);
+        System.out.println("Média de preço de venda: " + mediaPrecoVenda);
 
         sc.close();
     }
-
 }
