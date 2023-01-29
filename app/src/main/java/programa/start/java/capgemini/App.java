@@ -13,10 +13,10 @@ public class App {
 
         int countMaior = 0;
         int countMenor = 0;
-        int[] idadesMaiores = new int[5];
-        int[] idadesMenores = new int[5];
+        int[] idadesMaiores = new int[75];
+        int[] idadesMenores = new int[75];
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 75; i++) {
             System.out.print("Informe uma idade: ");
             int idade = sc.nextInt();
             if (idade >= 18 && idade <= 75) {
