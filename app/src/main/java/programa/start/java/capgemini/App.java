@@ -1,7 +1,6 @@
 /*
- * 25. Faça um algoritmo que leia dois números e identifique se são iguais ou diferentes. Caso eles sejam 
- * iguais imprima uma mensagem dizendo que eles são iguais. Caso sejam diferentes, informe qual número é o
- * maior;
+ * 26. Faça um algoritmo que leia um número de 1 a 5 e escreva por extenso. Caso o usuário digite um número
+ * que não esteja neste intervalo, exibir a seguinte mensagem: número inválido;
  */
 package programa.start.java.capgemini;
 
@@ -11,26 +10,27 @@ public class App {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
+        System.out.print("Digite um número de 1 a 5: ");
+        int num = sc.nextInt();
 
-        System.out.print("Digite o primeiro número: ");
-        int m = sc.nextInt();
-        System.out.print("Digite o segundo número: ");
-        int n = sc.nextInt();
-
-        System.out.println("Numeros digitados: " + m + ", " + n);
-
-        if (m == n) {
-            System.out.println("Números iguais.");
-        } else {
-            System.out.println("Números diferentes.");
-        }
-
-        if (m > n) {
-            System.out.println(m + " é o maior.");
-        } else if (n > m) {
-            System.out.println(n + " é o maior.");
-        } else {
-
+        switch (num) {
+            case 1:
+                System.out.println("Um");
+                break;
+            case 2:
+                System.out.println("Dois");
+                break;
+            case 3:
+                System.out.println("Três");
+                break;
+            case 4:
+                System.out.println("Quatro");
+                break;
+            case 5:
+                System.out.println("Cinco");
+                break;
+            default:
+                System.out.println("Número inválido");
         }
 
         sc.close();
