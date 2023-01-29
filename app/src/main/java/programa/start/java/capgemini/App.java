@@ -1,5 +1,5 @@
 /*
- * Escreva um algoritmo que leia os dados de “N” pessoas (nome, sexo, idade e saúde) e informe se está apta
+ * 21. Escreva um algoritmo que leia os dados de “N” pessoas (nome, sexo, idade e saúde) e informe se está apta
  * ou não para cumprir o serviço militar obrigatório. Informe os totais;
  */
 package programa.start.java.capgemini;
@@ -15,7 +15,7 @@ public class App {
         int contadorApto = 0;
         int contadorInapto = 0;
         String nome, sexo, saude;
-  
+
         System.out.print("Quantas pessoas serão informadas: ");
         n = sc.nextInt();
 
