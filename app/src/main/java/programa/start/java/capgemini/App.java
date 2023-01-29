@@ -1,6 +1,8 @@
 /*
- * 11. Faça um algoritmo que receba o preço de custo de um produto e mostre o valor de venda. Sabe-se que o 
- * preço de custo receberá um acréscimo de acordo com um percentual informado pelo usuário;
+ * 12. O custo de um carro novo ao consumidor é a soma do custo de fábrica mais o percentual do distribuidor e
+ * dos impostos aplicados (primeiro os impostos são aplicados sobre o custo de fábrica, e depois o percentual
+ * do distribuidor sobre o resultado). Supondo que o percentual do distribuidor seja de 28% e os impostos
+ * 45%, escreva um algoritmo que leia o custo de fábrica de um carro e informe o custo ao consumidor do mesmo;
  */
 package programa.start.java.capgemini;
 
@@ -14,17 +16,19 @@ public class App {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Informe o preço de custo do produto: ");
-        double precoCusto = sc.nextDouble();
+        double custoFabrica, custoDistribuidor, custoImpostos, custoConsumidor;
 
-        System.out.print("Informe o percentual de acrescimo: ");
-        double percentualAcrescimo = sc.nextDouble();
+        final double PERC_DISTRIBUIDOR = 0.28;
+        final double PERC_IMPOSTOS = 0.45;
 
-        double valorVenda = precoCusto + (precoCusto * (percentualAcrescimo / 100));
+        System.out.print("Informe o custo de fabrica do produto: R$");
+        custoFabrica = sc.nextDouble();
 
-        System.out.println("Preço de custo: R$" + String.format("%.2f", precoCusto));
-        System.out.println("Percentual do acrescimo: R$" + String.format("%.2f", percentualAcrescimo));
-        System.out.println("Valor de venda: R$" + String.format("%.2f", valorVenda));
+        custoImpostos = custoFabrica * PERC_IMPOSTOS;
+        custoDistribuidor = (custoFabrica + custoImpostos) * PERC_DISTRIBUIDOR;
+        custoConsumidor = custoFabrica + custoImpostos + custoDistribuidor;
+
+        System.out.println("Custo ao consumidor: R$" + String.format("%.2f", custoConsumidor));
 
         sc.close();
     }
