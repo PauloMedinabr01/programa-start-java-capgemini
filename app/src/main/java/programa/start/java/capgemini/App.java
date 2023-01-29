@@ -1,6 +1,6 @@
 /*
- * 9. Faça um algoritmo que receba um valor que foi depositado e exiba o valor com rendimento após um mês. Considere fixo o juro da poupança em 
- * 0,07% a. m;
+ * 10. A Loja Mamão com Açúcar está vendendo seus produtos em 5(cinco) prestações sem juros. Faça um algoritmo
+ * que receba um valor de uma compra e mostre o valor das prestações;
  */
 package programa.start.java.capgemini;
 
@@ -14,14 +14,14 @@ public class App {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Informe o valor depositado: ");
-        double valorDepositado = sc.nextDouble();
+        System.out.print("Informe o valor da compra para calcular as prestações: ");
+        double valorCompra = sc.nextDouble();
 
-        double juros = valorDepositado * 0.0007;
-        double valorFinal = valorDepositado + juros;
+        double prestacoes = valorCompra / 5;
 
-        System.out.println("Valor final com rendimento após um mês: " + String.format("%.2f", valorFinal));
-       
+        System.out.println("Valor total da compra: R$" + String.format("%.2f", valorCompra));
+        System.out.println("Valor das 5 prestações sem juros: R$" + String.format("%.2f", prestacoes));
+
         sc.close();
     }
 }
