@@ -1,7 +1,6 @@
 /*
- * 16. Escreva um algoritmo que leia o nome e as três notas obtidas por um aluno durante o semestre. 
- * Calcular a sua média (aritmética), informar o nome e sua menção aprovado (media >= 7), 
- * Reprovado (media <= 5) e Recuperação (media entre 5.1 a 6.9);
+ * 16. Leia 80 números e ao final informar quantos número(s) est(á)ão no intervalo entre 10 (inclusive) e 150
+ * (inclusive);
  */
 package programa.start.java.capgemini;
 
@@ -12,35 +11,23 @@ public class App {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Informe o nome do aluno: ");
-        String nome = sc.nextLine();
+        int count = 0;
+        int[] numeros = new int[80];
 
-        System.out.println("Informe as notas do aluno");
-        System.out.print("Digite a primeira nota: ");
-
-        int n1 = sc.nextInt();
-
-        System.out.print("Digite a segunda nota: ");
-        int n2 = sc.nextInt();
-
-        System.out.print("Digite a terceira nota: ");
-        int n3 = sc.nextInt();
-
-        int soma = n1 + n2 + n3;
-        double media = soma / 3;
-
-        System.out.println("Soma das 3 notas: " + soma);
-        System.out.println("Média das 3 notas: " + media);
-
-        if (media <= 5) {
-            System.out.println("Aluno " + nome + " reprovado.");
-        } else if (media > 5.1 && media <= 6.9) {
-            System.out.println("Aluno " + nome + " em recuperação.");
-        } else {
-            System.out.println("Aluno " + nome + " aprovado.");
+        for (int i = 0; i < 80; i++) {
+            System.out.print("Informe um número: ");
+            int numero = sc.nextInt();
+            if (numero >= 10 && numero <= 150) {
+                numeros[count] = numero;
+                count++;
+            }
         }
 
+        System.out.println("Foram encontrados " + count + " números no intervalo entre 10 e 150.");
+        System.out.print("Os números encontrados foram: ");
+        for (int i = 0; i < count; i++) {
+            System.out.print(numeros[i] + " ");
+        }
         sc.close();
     }
-
 }
