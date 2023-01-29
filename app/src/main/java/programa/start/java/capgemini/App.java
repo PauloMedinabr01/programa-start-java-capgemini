@@ -1,6 +1,6 @@
 /*
- * 10. A Loja Mamão com Açúcar está vendendo seus produtos em 5(cinco) prestações sem juros. Faça um algoritmo
- * que receba um valor de uma compra e mostre o valor das prestações;
+ * 11. Faça um algoritmo que receba o preço de custo de um produto e mostre o valor de venda. Sabe-se que o 
+ * preço de custo receberá um acréscimo de acordo com um percentual informado pelo usuário;
  */
 package programa.start.java.capgemini;
 
@@ -14,13 +14,17 @@ public class App {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Informe o valor da compra para calcular as prestações: ");
-        double valorCompra = sc.nextDouble();
+        System.out.print("Informe o preço de custo do produto: ");
+        double precoCusto = sc.nextDouble();
 
-        double prestacoes = valorCompra / 5;
+        System.out.print("Informe o percentual de acrescimo: ");
+        double percentualAcrescimo = sc.nextDouble();
 
-        System.out.println("Valor total da compra: R$" + String.format("%.2f", valorCompra));
-        System.out.println("Valor das 5 prestações sem juros: R$" + String.format("%.2f", prestacoes));
+        double valorVenda = precoCusto + (precoCusto * (percentualAcrescimo / 100));
+
+        System.out.println("Preço de custo: R$" + String.format("%.2f", precoCusto));
+        System.out.println("Percentual do acrescimo: R$" + String.format("%.2f", percentualAcrescimo));
+        System.out.println("Valor de venda: R$" + String.format("%.2f", valorVenda));
 
         sc.close();
     }
