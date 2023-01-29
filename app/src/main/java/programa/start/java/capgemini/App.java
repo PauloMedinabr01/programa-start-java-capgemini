@@ -36,8 +36,8 @@ public class App {
 
             double valorAPagar = valorCarro - valorDesconto;
 
-            System.out.println("Valor do desconto: R$ " + valorDesconto);
-            System.out.println("Valor a ser pago: R$ " + valorAPagar);
+            System.out.println("Valor do desconto: R$ " + String.format("%.2f", valorDesconto));
+            System.out.println("Valor a ser pago: R$ " + String.format("%.2f", valorAPagar));
 
             System.out.print("Deseja continuar calculando desconto? (S/N): ");
             String continuar = sc.next();
