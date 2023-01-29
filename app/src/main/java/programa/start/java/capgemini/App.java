@@ -1,6 +1,9 @@
 /*
- * 19. Escreva um algoritmo que leia o nome e o sexo de 56 pessoas e informe o nome e se ela é homem ou mulher.
- * No final informe total de homens e de mulheres;
+ * A concessionária de veículos “CARANGO VELHO” está vendendo os seus veículos com desconto. Faça 
+ * um algoritmo que calcule e exiba o valor do desconto e o valor a ser pago pelo cliente de vários carros. O 
+ * desconto deverá ser calculado de acordo com o ano do veículo. Até 2000 - 12% e acima de 2000 - 7%. O
+ * sistema deverá perguntar se deseja continuar calculando desconto até que a resposta seja: “(N) Não”. 
+ * Informar total de carros com ano até 2000 e total geral;
  */
 package programa.start.java.capgemini;
 
@@ -11,43 +14,43 @@ public class App {
 
         Scanner sc = new Scanner(System.in);
 
-        int countHomem = 0;
-        int countMulher = 0;
-        String[] homens = new String[56];
-        String[] mulheres = new String[56];
+        int contadorCarrosAntigos = 0;
+        int contadorCarrosGeral = 0;
 
-        for (int i = 0; i < 56; i++) {
-            System.out.print("Informe o nome: ");
-            String nome = sc.nextLine();
-            System.out.print("Informe o sexo (M/F): ");
-            String sexo = sc.nextLine();
+        while (true) {
+            System.out.print("Informe o ano do carro: ");
+            int anoCarro = sc.nextInt();
 
-            if (sexo.equalsIgnoreCase("M")) {
-                System.out.println(nome + " é um homem.");
-                homens[countHomem] = nome;
-                countHomem++;
-            } else if (sexo.equalsIgnoreCase("F")) {
-                System.out.println(nome + " é uma mulher.");
-                mulheres[countMulher] = nome;
-                countMulher++;
+            System.out.print("Informe o valor do carro: ");
+            double valorCarro = sc.nextDouble();
+
+            double valorDesconto;
+            if (anoCarro <= 2000) {
+                valorDesconto = valorCarro * 0.12;
+                contadorCarrosAntigos++;
+                contadorCarrosGeral++;
             } else {
-                System.out.println("Sexo inválido, por favor informe novamente.");
-                i--;
+                valorDesconto = valorCarro * 0.07;
+                contadorCarrosGeral++;
             }
+
+            double valorAPagar = valorCarro - valorDesconto;
+
+            System.out.println("Valor do desconto: R$ " + valorDesconto);
+            System.out.println("Valor a ser pago: R$ " + valorAPagar);
+
+            System.out.print("Deseja continuar calculando desconto? (S/N): ");
+            String continuar = sc.next();
+
+            if (continuar.equalsIgnoreCase("N")) {
+                break;
+            }
+
         }
 
-        System.out.println("Foram encontrados " + countHomem + " homens.");
-        System.out.println("Foram encontrados " + countMulher + " mulheres.");
+        System.out.println("Total de carros com ano até 2000: " + contadorCarrosAntigos);
+        System.out.println("Total geral de carros: " + contadorCarrosGeral);
 
-        System.out.print("Os homens são: ");
-        for (int i = 0; i < countHomem; i++) {
-            System.out.print(homens[i] + " ");
-        }
-        System.out.println();
-        System.out.print("As mulheres são: ");
-        for (int i = 0; i < countMulher; i++) {
-            System.out.print(mulheres[i] + " ");
-        }
         sc.close();
 
     }
