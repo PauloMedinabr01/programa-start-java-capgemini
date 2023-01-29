@@ -1,13 +1,5 @@
 /*
- * 28. Escreva um algoritmo para uma empresa que decide dar um reajuste a seus 584 funcionários de acordo 
-* com os seguintes critérios: 
-* a. 50% para aqueles que ganham menos do que três salários mínimos;
-* b. 20% para aqueles que ganham entre três até dez salários mínimos; 
-* c. 15% para aqueles que ganham acima de dez até vinte salários mínimos; 
-* d. 10% para os demais funcionários.
-* Leia o nome do funcionário, seu salário e o valor do salário mínimo. Calcule o seu novo salário 
-* reajustado. Escrever o nome do funcionário, o reajuste e seu novo salário. Calcule quanto à empresa 
-* vai aumentar sua folha de pagamento;
+ * 29. Faça um algoritmo que receba o número do mês e mostre o mês correspondente. Valide mês inválido;
  */
 package programa.start.java.capgemini;
 
@@ -17,41 +9,61 @@ public class App {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        int numFuncionarios = 584;
-        double salarioMinimo, salario, novoSalario, reajuste, totalReajuste = 0;
-        String nomeFuncionario;
 
-        System.out.print("Informe o valor do salário mínimo: ");
-        salarioMinimo = sc.nextDouble();
+        while (true) {
+            System.out.println("Informe o número referente ao mês: ");
+            int n = sc.nextInt();
 
-        for (int i = 0; i < numFuncionarios; i++) {
-            System.out.print("Informe o nome do funcionário: ");
-            nomeFuncionario = sc.next();
-
-            System.out.print("Informe o salário do funcionário: ");
-            salario = sc.nextDouble();
-
-            if (salario < 3 * salarioMinimo) {
-                reajuste = salario * 0.5;
-            } else if (salario >= 3 * salarioMinimo && salario < 10 * salarioMinimo) {
-                reajuste = salario * 0.2;
-            } else if (salario >= 10 * salarioMinimo && salario < 20 * salarioMinimo) {
-                reajuste = salario * 0.15;
-            } else {
-                reajuste = salario * 0.1;
+            if (n == 0) {
+                System.out.println("Programa finalizado.");
+                break;
             }
 
-            novoSalario = salario + reajuste;
-            totalReajuste += reajuste;
+            switch (n) {
+                case 1:
+                    System.out.println("Janeiro");
+                    break;
+                case 2:
+                    System.out.println("Fevereiro");
+                    break;
+                case 3:
+                    System.out.println("Março");
+                    break;
+                case 4:
+                    System.out.println("Abril");
+                    break;
+                case 5:
+                    System.out.println("Maio");
+                    break;
+                case 6:
+                    System.out.println("Junho");
+                    break;
+                case 7:
+                    System.out.println("Julho");
+                    break;
+                case 8:
+                    System.out.println("Agosto");
+                    break;
+                case 9:
+                    System.out.println("Setembro");
+                    break;
+                case 10:
+                    System.out.println("Outubro");
+                    break;
+                case 11:
+                    System.out.println("Novembro");
+                    break;
+                case 12:
+                    System.out.println("Dezembro");
+                    break;
 
-            System.out.println("Funcionário: " + nomeFuncionario);
-            System.out.println("Reajuste: R$ " + reajuste);
-            System.out.println("Novo salário: R$ " + novoSalario);
-            System.out.println("-----------------------------");
+                default:
+                    System.out.println("Mês inválido. Digite um numero entre (1 e 12).");
+                    break;
+            }
+
         }
 
-        System.out.println("Aumento total na folha de pagamento: R$ " + totalReajuste);
-
-        sc.close();
     }
+
 }
