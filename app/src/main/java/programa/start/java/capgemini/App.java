@@ -1,5 +1,5 @@
 /*
- * 29. Faça um algoritmo que receba o número do mês e mostre o mês correspondente. Valide mês inválido;
+ * 30. Escreva um algoritmo que leia três valores inteiros distintos e os escreva em ordem crescente;
  */
 package programa.start.java.capgemini;
 
@@ -9,61 +9,31 @@ public class App {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
+        System.out.println("Informe o primeiro valor inteiro: ");
+        int a = sc.nextInt();
+        System.out.println("Informe o segundo valor inteiro: ");
+        int b = sc.nextInt();
+        System.out.println("Informe o terceiro valor inteiro: ");
+        int c = sc.nextInt();
 
-        while (true) {
-            System.out.println("Informe o número referente ao mês: ");
-            int n = sc.nextInt();
-
-            if (n == 0) {
-                System.out.println("Programa finalizado.");
-                break;
+        if (a < b && a < c) {
+            if (b < c) {
+                System.out.println(a + " " + b + " " + c);
+            } else {
+                System.out.println(a + " " + c + " " + b);
             }
-
-            switch (n) {
-                case 1:
-                    System.out.println("Janeiro");
-                    break;
-                case 2:
-                    System.out.println("Fevereiro");
-                    break;
-                case 3:
-                    System.out.println("Março");
-                    break;
-                case 4:
-                    System.out.println("Abril");
-                    break;
-                case 5:
-                    System.out.println("Maio");
-                    break;
-                case 6:
-                    System.out.println("Junho");
-                    break;
-                case 7:
-                    System.out.println("Julho");
-                    break;
-                case 8:
-                    System.out.println("Agosto");
-                    break;
-                case 9:
-                    System.out.println("Setembro");
-                    break;
-                case 10:
-                    System.out.println("Outubro");
-                    break;
-                case 11:
-                    System.out.println("Novembro");
-                    break;
-                case 12:
-                    System.out.println("Dezembro");
-                    break;
-
-                default:
-                    System.out.println("Mês inválido. Digite um numero entre (1 e 12).");
-                    break;
+        } else if (b < a && b < c) {
+            if (a < c) {
+                System.out.println(b + " " + a + " " + c);
+            } else {
+                System.out.println(b + " " + c + " " + a);
             }
-
+        } else {
+            if (a < b) {
+                System.out.println(c + " " + a + " " + b);
+            } else {
+                System.out.println(c + " " + b + " " + a);
+            }
         }
-
     }
-
 }
