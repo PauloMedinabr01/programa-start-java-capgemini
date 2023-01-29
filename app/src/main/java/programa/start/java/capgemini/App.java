@@ -1,5 +1,5 @@
 /*
- * 13. Faça um algoritmo que receba um número e mostre uma mensagem caso este número seja maior que 10;
+ * 14. Escreva um algoritmo que leia dois valores inteiro distintos e informe qual é o maior;
  */
 package programa.start.java.capgemini;
 
@@ -10,14 +10,21 @@ public class App {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Informe um número: ");
-        int numero = sc.nextInt();
+        while (true) {
+            System.out.print("Informe o primeiro número: ");
+            int num1 = sc.nextInt();
 
-        while (numero <= 10) {
-            System.out.println("Digite um numero maior que 10: ");
-            numero = sc.nextInt();
-            if (numero > 10) {
-                System.out.println("Numero: " + numero + " - maior que 10. ");
+            System.out.print("Informe o segundo número: ");
+            int num2 = sc.nextInt();
+
+            if (num1 > num2) {
+                System.out.println("O maior número é: " + num1);
+                break;
+            } else if (num2 > num1) {
+                System.out.println("O maior número é: " + num2);
+                break;
+            } else {
+                System.out.println("Os números informados são iguais, por favor informe novamente.");
             }
         }
         sc.close();
