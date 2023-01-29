@@ -1,8 +1,13 @@
 /*
- * 27. A concessionária de veículos “CARANGO” está vendendo os seus veículos com desconto. Faça um algoritmo
- *  que calcule e exiba o valor do desconto e o valor a ser pago pelo cliente. O desconto deverá ser calculado
- *  sobre o valor do veículo de acordo com o combustível (álcool – 25%, gasolina – 21% ou diesel –14%). 
- * Com valor do veículo zero encerra entrada de dados. Informe total de desconto e total pago pelos clientes;
+ * 28. Escreva um algoritmo para uma empresa que decide dar um reajuste a seus 584 funcionários de acordo 
+* com os seguintes critérios: 
+* a. 50% para aqueles que ganham menos do que três salários mínimos;
+* b. 20% para aqueles que ganham entre três até dez salários mínimos; 
+* c. 15% para aqueles que ganham acima de dez até vinte salários mínimos; 
+* d. 10% para os demais funcionários.
+* Leia o nome do funcionário, seu salário e o valor do salário mínimo. Calcule o seu novo salário 
+* reajustado. Escrever o nome do funcionário, o reajuste e seu novo salário. Calcule quanto à empresa 
+* vai aumentar sua folha de pagamento;
  */
 package programa.start.java.capgemini;
 
@@ -12,45 +17,40 @@ public class App {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
+        int numFuncionarios = 584;
+        double salarioMinimo, salario, novoSalario, reajuste, totalReajuste = 0;
+        String nomeFuncionario;
 
-        double totalDesconto = 0;
-        double totalPago = 0;
+        System.out.print("Informe o valor do salário mínimo: ");
+        salarioMinimo = sc.nextDouble();
 
-        while (true) {
-            System.out.print("Informe o valor do veículo: ");
-            double valorVeiculo = sc.nextDouble();
+        for (int i = 0; i < numFuncionarios; i++) {
+            System.out.print("Informe o nome do funcionário: ");
+            nomeFuncionario = sc.next();
 
-            if (valorVeiculo == 0) {
-                break;
-            }
+            System.out.print("Informe o salário do funcionário: ");
+            salario = sc.nextDouble();
 
-            System.out.print("Informe o tipo de combustível (Álcool, Gasolina ou Diesel): ");
-            String combustivel = sc.next();
-
-            double desconto = 0;
-            if (combustivel.equalsIgnoreCase("Álcool")) {
-                desconto = 0.25;
-            } else if (combustivel.equalsIgnoreCase("Gasolina")) {
-                desconto = 0.21;
-            } else if (combustivel.equalsIgnoreCase("Diesel")) {
-                desconto = 0.14;
+            if (salario < 3 * salarioMinimo) {
+                reajuste = salario * 0.5;
+            } else if (salario >= 3 * salarioMinimo && salario < 10 * salarioMinimo) {
+                reajuste = salario * 0.2;
+            } else if (salario >= 10 * salarioMinimo && salario < 20 * salarioMinimo) {
+                reajuste = salario * 0.15;
             } else {
-                System.out.println("Combustível inválido");
-                continue;
+                reajuste = salario * 0.1;
             }
 
-            double valorDesconto = valorVeiculo * desconto;
-            double valorPago = valorVeiculo - valorDesconto;
+            novoSalario = salario + reajuste;
+            totalReajuste += reajuste;
 
-            totalDesconto += valorDesconto;
-            totalPago += valorPago;
-
-            System.out.println("Valor do desconto: R$" + valorDesconto);
-            System.out.println("Valor a ser pago: R$" + valorPago);
+            System.out.println("Funcionário: " + nomeFuncionario);
+            System.out.println("Reajuste: R$ " + reajuste);
+            System.out.println("Novo salário: R$ " + novoSalario);
+            System.out.println("-----------------------------");
         }
 
-        System.out.println("Total de desconto: R$" + totalDesconto);
-        System.out.println("Total pago pelos clientes: R$" + totalPago);
+        System.out.println("Aumento total na folha de pagamento: R$ " + totalReajuste);
 
         sc.close();
     }
