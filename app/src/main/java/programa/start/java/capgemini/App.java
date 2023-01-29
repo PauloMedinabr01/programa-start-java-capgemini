@@ -1,5 +1,5 @@
 /*
- * 14. Escreva um algoritmo que leia dois valores inteiro distintos e informe qual é o maior;
+ * 15. Faça um algoritmo que receba um número e diga se este número está no intervalo entre 100 e 200;
  */
 package programa.start.java.capgemini;
 
@@ -10,23 +10,19 @@ public class App {
 
         Scanner sc = new Scanner(System.in);
 
+        System.out.print("Informe um numero: ");
+        int numero = sc.nextInt();
+
         while (true) {
-            System.out.print("Informe o primeiro número: ");
-            int num1 = sc.nextInt();
-
-            System.out.print("Informe o segundo número: ");
-            int num2 = sc.nextInt();
-
-            if (num1 > num2) {
-                System.out.println("O maior número é: " + num1);
-                break;
-            } else if (num2 > num1) {
-                System.out.println("O maior número é: " + num2);
+            if (numero > 100 && numero < 200) {
+                System.out.println("O número está no intervalo entre 100 e 200. ");
                 break;
             } else {
-                System.out.println("Os números informados são iguais, por favor informe novamente.");
+                System.out.println("O número informado não está no intervalo, por favor informe novamente.");
             }
+            numero = sc.nextInt();
         }
         sc.close();
     }
+
 }
